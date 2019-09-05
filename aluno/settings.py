@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'aluno1',
     'rest_framework',
     'professor',
+    'rest_framework.authtoken',
     
 ]
 

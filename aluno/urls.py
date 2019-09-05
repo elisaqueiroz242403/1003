@@ -17,16 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
+from rest_framework.authtoken.views import obtain_auth_token 
 
 from aluno1.views import AlunoViewSet
 from professor.views import ProfessorViewSet
 
 router = routers.DefaultRouter()
-router.register(r'Alunos', AlunoViewSet)
+router.register(r'alunos', AlunoViewSet)
 router.register(r'Professor', ProfessorViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-   
-]
+    path('auth-api', obtain_auth_token)
+  ]
